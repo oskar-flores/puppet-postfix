@@ -85,6 +85,9 @@ class postfix::server (
   $smtp_generic_maps = false,
   $relocated_maps = false,
   $extra_main_parameters = {},
+  $always_add_missing_headers = 'no',
+  $maximal_queue_lifetime = '5d',
+  $bounce_queue_lifetime = '5d',
   # master.cf
   $smtp_content_filter = [],
   $smtps_content_filter = [],
@@ -99,8 +102,8 @@ class postfix::server (
   # reject everything else.
   $submission_smtpd_client_restrictions = 'permit_sasl_authenticated,reject',
   # smtps should allow unauthenticated delivery (for local or relay_domains for
-  # example) so no explicit reject. smtps port 465 is non-standards compliant 
-  # anyway so no one true answer. 
+  # example) so no explicit reject. smtps port 465 is non-standards compliant
+  # anyway so no one true answer.
   $smtps_smtpd_client_restrictions = 'permit_sasl_authenticated',
   $master_services = [],
   # Other files

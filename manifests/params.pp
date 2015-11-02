@@ -6,6 +6,7 @@ class postfix::params {
       $postfix_version = $::operatingsystemmajrelease ? {
         '6'     => '2.6.6',
         '5'     => '2.3.3',
+        '7'     => '2.6.6',
         default => '2.6.6',
       }
       $command_directory = '/usr/sbin'
